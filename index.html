@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fazenda Demo 3D — Irrigação por Pivô</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <canvas id="scene"></canvas>
+  <div id="screenWet" aria-hidden="true"></div>
+
+  <aside class="map-card is-farm-active" id="mapCard" aria-label="Resumo da fazenda">
+    <header class="map-card__header">
+      <div class="map-card__title">
+        <h2>Fazenda Demo 3D</h2>
+        <button class="map-card__edit map-card__minimize" type="button" id="mapCardMinimize" aria-label="Minimizar painel" title="Minimizar" aria-expanded="true">
+          <i class="fa-solid fa-chevron-up"></i>
+        </button>
+        <button class="map-card__edit" type="button" aria-label="Configurações" title="Somente demonstração">
+          <i class="fa-solid fa-pen"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="map-card__search">
+      <span class="map-card__search-ico" aria-hidden="true"><i class="fa-solid fa-wifi"></i></span>
+      <input class="map-card__input" id="mapSearchInput" name="map_search" type="text" placeholder="Ex: Pivo 1">
+    </div>
+
+    <nav class="map-card__list" aria-label="Categorias de equipamentos">
+      <button class="map-card__item map-card__item--toggle is-open" type="button" data-panel="pivos" aria-expanded="true">
+        <span>Pivôs</span>
+        <span class="map-card__toggle-counts" id="pivotsBadge"></span><i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="map-card__panel is-open" id="pivotsPanel" data-panel="pivos"></div>
+
+      <button class="map-card__item map-card__item--toggle" type="button" data-panel="bomba" aria-expanded="false">
+        <span>Bombas</span>
+        <span class="map-card__toggle-counts" id="pumpBadge"></span><i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <!-- cartões de bomba renderizados por js/ui/pump-panel.js (PUMP_CONFIG) -->
+      <div class="map-card__panel" id="pumpPanel" data-panel="bomba"></div>
+    </nav>
+  </aside>
+
+  <button id="farmerBtn" class="farmer-btn" title="Controlar o fazendeiro (WASD)" aria-label="Modo fazendeiro">
+    <i class="fa-solid fa-person-walking"></i>
+  </button>
+  <div class="hint" id="farmerHint" style="display:none;">WASD para andar/virar · Shift para correr · ESC para sair</div>
+  <div class="hint" id="panelDoorHint" style="display:none; bottom: 46px;">Pressione E para abrir/fechar o painel</div>
+
+  <script src="js/three.min.js"></script>
+  <script src="js/GLTFLoader.js"></script>
+  <script src="js/RGBELoader.js"></script>
+  <script type="module" src="js/main.js?v=23"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+Coloque aqui seus modelos 3D (.glb / .gltf).
+
+1. Baixe modelos gratuitos (licença CC0) em:
+   - https://poly.pizza        (busque: tractor, barn, cow, windmill...)
+   - https://quaternius.com    (pacote "Ultimate Farm" e outros)
+   - https://kenney.nl/assets  (pacotes low-poly)
+
+2. Registre o arquivo no array GLTF_MODELS dentro de js/gltf-models.js.
+
+3. IMPORTANTE: abra a demo por um servidor local (npx serve ou
+   python -m http.server) — abrindo o index.html direto do disco,
+   o navegador bloqueia a leitura dos .glb. Veja o README.md.
+
+
+Terreno real (models/terrain/):
+Baseado em 'Gaer Fort - Newport' (https://sketchfab.com/3d-models/gaer-fort-newport-d5d433a36c404d768aefbf57bb919fd9)
+por Pete the Geek (https://sketchfab.com/pete-the-geek), licenciado sob CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/).
+Nuvem de pontos rasterizada em terrain_height.bin (grade 1 m) + terrain_color.bmp (0.5 m).

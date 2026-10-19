@@ -1,0 +1,79 @@
+/* Design tokens — cores, pesos de fonte e camadas (z-index).
+   Trocar de tema é só redefinir estas variáveis; nenhum seletor de
+   componente deve conter cor/peso/z-index literal fora deste arquivo. */
+:root {
+  /* marca */
+  --color-primary: #16a34a;
+  --color-primary-dark: #12813b;
+  --color-danger: #ef4444;
+  --color-danger-strong: #dc2626;
+  --color-info: #2563eb;
+  --color-info-dark: #1d4ed8;
+  --color-success: #16a34a;
+  --color-water: #2563a8;
+  --color-cta: #00b96b;
+  --color-cta-hover: #26d08a;
+
+  /* texto (tema claro) */
+  --color-text: #0f1720;
+  --color-text-inverse: #fff;
+  --color-text-muted: #6b7280;
+  --color-text-faint: #94a3b8;
+
+  /* badges de equipamento */
+  --badge-warn: #dac422;
+  --badge-info: #3b82f6;
+  --badge-brown: #54341c;
+  --badge-success: var(--color-success);
+  --badge-danger: var(--color-danger-strong);
+  --badge-neutral: #6c6c6c;
+  --badge-complete: var(--color-info-dark);
+  --badge-ferti: #93c5fd;
+  --badge-overflow: #475569;
+
+  /* superfície do map-card (tema claro) */
+  --card-bg: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.93) 100%);
+  --card-border: rgba(255, 255, 255, 0.44);
+  --card-shadow: 0 18px 40px rgba(15, 23, 32, .18);
+  --card-divider: rgba(15, 23, 32, .08);
+  --card-divider-soft: rgba(15, 23, 32, .06);
+  --card-text: #0f1720;
+  --card-text-secondary: #0f1720;
+  --card-text-muted: var(--color-text-muted);
+  --card-text-faint: var(--color-text-faint);
+  --card-input-bg: rgba(255, 255, 255, 0.28);
+  --card-input-border: rgba(15, 23, 32, .12);
+  --card-scrollbar-track: transparent;
+  --card-scrollbar-thumb: rgba(148, 163, 184, .3);
+  --card-tooltip-bg: #0f1720;
+  --card-tooltip-text: #fff;
+  --card-metric-icon-filter: none;
+
+  /* escala de peso de fonte */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-icon-solid: 900;
+
+  /* escala de camadas */
+  --z-map-card: 10;
+  --z-map-card-tooltip: 5;
+}
+
+[data-theme="dark"] {
+  --card-bg: linear-gradient(180deg, rgba(255, 255, 255, .04) 0%, rgba(255, 255, 255, 0) 20%),
+             linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
+  --card-border: rgba(255, 255, 255, .07);
+  --card-shadow: 0 18px 40px rgba(0, 0, 0, .60);
+  --card-divider: rgba(255, 255, 255, .07);
+  --card-divider-soft: rgba(255, 255, 255, .07);
+  --card-text: #f1f5f9;
+  --card-text-secondary: #e2e8f0;
+  --card-text-muted: #64748b;
+  --card-text-faint: #475569;
+  --card-input-bg: rgba(255, 255, 255, .06);
+  --card-input-border: rgba(255, 255, 255, .12);
+  --card-scrollbar-track: transparent;
+  --card-scrollbar-thumb: rgba(255, 255, 255, .15);
+  --card-metric-icon-filter: brightness(0) invert(1);
+}

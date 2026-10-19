@@ -1,0 +1,53 @@
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; overflow: hidden; }
+body {
+  font-family: "Inter", "Segoe UI", -apple-system, system-ui, sans-serif;
+  background: #9fc8e8;
+  color: var(--color-text);
+}
+#scene { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+
+/* tela molhada — aparece quando a câmera passa por baixo de um pivô borrifando
+   (ver js/controls/screen-wet.js); opacidade/blur controlados por frame via JS */
+#screenWet {
+  position: fixed; inset: 0; z-index: 5; pointer-events: none;
+  opacity: 0; transition: opacity 0.1s linear;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 3%),
+    radial-gradient(circle at 72% 12%, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 4%),
+    radial-gradient(circle at 40% 55%, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 2.5%),
+    radial-gradient(circle at 85% 62%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 3.5%),
+    radial-gradient(circle at 10% 78%, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 3%),
+    radial-gradient(circle at 58% 82%, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 4%),
+    radial-gradient(circle at 30% 92%, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 2.5%),
+    radial-gradient(circle at 92% 30%, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 3%),
+    linear-gradient(rgba(150,190,220,0.18), rgba(150,190,220,0.18));
+}
+
+.hint {
+  position: fixed; bottom: 14px; left: 50%; transform: translateX(-50%);
+  font-size: 12px; color: rgba(255, 255, 255, 0.85);
+  background: rgba(10, 18, 12, 0.55);
+  padding: 6px 14px; border-radius: 999px;
+  backdrop-filter: blur(6px);
+  pointer-events: none; white-space: nowrap;
+}
+
+.farmer-btn {
+  position: fixed; bottom: 16px; right: 16px; z-index: var(--z-map-card);
+  width: 54px; height: 54px; padding: 0;
+  font-size: 22px; line-height: 1; color: var(--card-text);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 50%;
+  box-shadow: var(--card-shadow);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.15s, background 0.15s, color 0.15s;
+}
+.farmer-btn:hover { transform: scale(1.08); }
+.farmer-btn.active {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 0 16px var(--color-primary);
+}
